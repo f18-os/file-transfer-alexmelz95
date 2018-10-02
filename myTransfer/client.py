@@ -81,7 +81,7 @@ while not command:
 
 inputFile = open(command, "r")
 inputText = inputFile.read()
-inputText = inputText.replace("\n", "")
+inputText = inputText.replace("\n", "@")
 inputFile.close()
 
 print("sending " + command)

@@ -40,7 +40,7 @@ while True:
         command = input("Save File Name: ")
 
     outputFile = open(command, "w")
-    outputFile.write(payload)
+    outputFile.write(payload.decode())
     outputFile.close()
 
     framedSend(sock, payload, debug)
