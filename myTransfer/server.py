@@ -34,5 +34,13 @@ while True:
     if debug: print("rec'd: ", payload)
     if not payload:
         break
-    payload += b"!"             # make emphatic!
+
+    command = ""
+    while not command:
+        command = input("Save File Name: ")
+
+    outputFile = open(command, "w")
+    outputFile.write(payload)
+    outputFile.close()
+
     framedSend(sock, payload, debug)
