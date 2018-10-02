@@ -1,9 +1,10 @@
 #! /usr/bin/env python3
-import sys, re, socket
+import sys, re, socket, os
 sys.path.append("../lib")       # for params
 import params
+
 switchesVarDefaults = (
-    (('-l', '--listenPort') ,'listenPort', 50001),
+    (('-l', '--listenPort') ,'listenPort', 50000),
     (('-d', '--debug'), "debug", False), # boolean (set if present)
     (('-?', '--usage'), "usage", False), # boolean (set if present)
     )

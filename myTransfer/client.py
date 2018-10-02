@@ -10,9 +10,15 @@ import params
 
 from framedSock import framedSend, framedReceive
 
+askProxy = input('Would you like to use a stammer proxy?(y/n)')
+
+if 'y' in askProxy:
+    port = '50000'
+else:
+    port = '50001'
 
 switchesVarDefaults = (
-    (('-s', '--server'), 'server', "127.0.0.1:50001"),
+    (('-s', '--server'), 'server', "127.0.0.1:"+port),
     (('-d', '--debug'), "debug", False), # boolean (set if present)
     (('-?', '--usage'), "usage", False), # boolean (set if present)
     )
@@ -79,8 +85,17 @@ while not command:
         print(onlyfiles)
         command = ""
 
-inputFile = open(command, "r")
-inputText = inputFile.read()
+    try:
+        inputFile = open(command, "r")
+    except FileNotFoundError:
+        print("File Not Found Error")
+        command = ""
+
+    inputText = inputFile.read()
+    if not inputText:
+        print("File is empty. Please use a file with contents.")
+        command = ""
+
 inputText = inputText.replace("\n", "@")
 inputFile.close()
 
