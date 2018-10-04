@@ -1,3 +1,10 @@
+# myTransfer ReadMe
+
+Client-server file transfer system.  If running a proxy server at the same time, it allows you to run a stammer proxy.
+However, the stammer proxy is not required for functionality.  Simply run the server, run the client, select what
+file you want to send on client side, type where you want to save the payload on the server side, and then if you
+want to continue, run the client again without restarting the server.
+
 # nets-tcp-framed-echo
 tcp echo with framing
 
@@ -18,21 +25,20 @@ Directory `framed-echo` includes code that implements framing described below
 
 * FramedForkServer uses `fork()` to handle multiple simultaneous clients.    
 
-*  The -? (usage) option prints parameters and default values. 
+*  The -? (usage) option prints parameters and default values.
 
 *  `framedSock.py` holds the common code used in the client and server including framed send and receive.
 
 
 
-Your assignment is to write `fileClient.py` and `fileServer.py` which can transfer a file ("put") from a client to the server. Your programs should: 
+Your assignment is to write `fileClient.py` and `fileServer.py` which can transfer a file ("put") from a client to the server. Your programs should:
 
 * be in the file-transfer-lab subdir
 * work with and without the proxy
 * support multiple clients simultaneously using `fork()`
-* gracefully deal with scenarios such as: 
+* gracefully deal with scenarios such as:
     * zero length files
     * user attempts to transmit a file which does not exist
     * file already exists on the server
     * the client or server unexpectedly disconnect
 * optional (unless you're taking this course for grad credit): be able to request ("get") files from server
-
