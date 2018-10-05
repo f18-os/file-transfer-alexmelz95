@@ -1,0 +1,2 @@
+#1) The concept of removing the new lines was explained to me by Alan Uribe.
+    However, the idea of using the @ symbol I got from Miguel Nunez.

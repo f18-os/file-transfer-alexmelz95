@@ -96,6 +96,7 @@ while not command:
         print("File is empty. Please use a file with contents.")
         command = ""
 
+#View #1 on Collaboration Report
 inputText = inputText.replace("\n", "@")
 inputFile.close()
 
